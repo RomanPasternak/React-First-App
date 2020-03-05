@@ -1,0 +1,13 @@
+.nav{
+    grid-area: n;
+    background-color: darkgoldenrod;
+}
+li{
+    list-style: none;
+}
+a {
+    color: white;
+}
+.activeLink{
+    color: green;
+}

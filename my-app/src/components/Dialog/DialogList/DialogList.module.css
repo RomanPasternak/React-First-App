@@ -1,0 +1,19 @@
+.activeDialog{
+    color: blue;
+}
+.dialog{
+    margin: 10px;
+}
+.avaDialog{
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border-radius: 100%;
+}
+.dialogNameStl{
+    font-size: 20px;
+}
+.dialogLink{
+    display: flex;
+    align-items: center;
+}

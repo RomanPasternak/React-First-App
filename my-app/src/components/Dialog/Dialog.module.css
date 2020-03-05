@@ -1,0 +1,28 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogItem {
+    padding: 20px;
+}
+
+.massages {
+    padding: 20px;
+}
+
+.massageAreaContainer {
+    display: flex;
+    align-items: center;
+}
+
+.textArea {
+    width: 400px;
+}
+
+.btnAddMassage {
+    width: 70px;
+    height: 30px;
+    margin-left: 10px;
+    border-radius: 30px;
+}
