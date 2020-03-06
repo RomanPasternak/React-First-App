@@ -23,10 +23,16 @@ const dialogReducer = (state = initialState, action) => {
             id: 6,
             massage: state.newMassage
         };
-        state.massageData.push(newMassage);
-        state.newMassage = '';
+        let stateCopy = {...state};
+        stateCopy.massageData = [...state.massageData];
+        stateCopy.massageData.push(newMassage);
+        stateCopy.newMassage = '';
+        return stateCopy;
     } else if (action.type === UPDATE_NEW_MASSAGE_TEXT) {
-        state.newMassage = action.newText;
+        let stateCopy = {...state};
+        stateCopy.newMassage = {...state.newMassage};
+        stateCopy.newMassage = action.newText;
+        return stateCopy;
     }
     return state;
 };

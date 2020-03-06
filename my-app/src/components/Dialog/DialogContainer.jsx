@@ -1,21 +1,25 @@
 import React from 'react';
 import {addMassageActionCreator, onMassageChangeActionCreator} from "../../redux/dialog-reducer";
 import Dialog from "./Dialog";
+import {connect} from "react-redux";
 
-
-const DialogContainer = (props) => {
-
-    let addMassage = () => {
-        props.store.dispatch(addMassageActionCreator());
-    };
-    let onMassageUpdateChange = (text) => {
-        props.store.dispatch(onMassageChangeActionCreator(text));
-    };
-
-    return (
-        <Dialog addMassage={addMassage} onMassageUpdateChange={onMassageUpdateChange}
-                dialogPage={props.store.getState().dialogPage}/>
-    );
+let mapStateToProps = (state) => {
+    return {
+        dialogPage: state.dialogPage
+    }
 };
+
+let mapDispatchToProps = (dispatch) => {
+    return {
+        addMassage: () => {
+            dispatch(addMassageActionCreator())
+        },
+        onMassageUpdateChange: (text) => {
+            dispatch(onMassageChangeActionCreator(text));
+        }
+    }
+}
+
+const DialogContainer = connect(mapStateToProps, mapDispatchToProps)(Dialog);
 
 export default DialogContainer;

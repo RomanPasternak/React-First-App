@@ -8,7 +8,7 @@ const Main = (props) =>{
     return(
         <main>
             <ProfileInfo/>
-            <PostsContainer store = {props.store}  />
+            <PostsContainer/>
         </main>
     );
 };

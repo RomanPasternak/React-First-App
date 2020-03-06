@@ -17,10 +17,15 @@ const profileReducer = (state = initialState, action) => {
             massage: state.newTextPost,
             likesCount: 2
         };
-        state.postsData.push(newPost);
-        state.newTextPost = '';
+        let stateCopy = {...state};
+        stateCopy.postsData = [...state.postsData];
+        stateCopy.postsData.push(newPost);
+        stateCopy.newTextPost = '';
+        return stateCopy;
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
-        state.newTextPost = action.newText;
+        let stateCopy = {...state};
+        stateCopy.newTextPost = action.newText;
+        return stateCopy;
     }
     return state;
 };
